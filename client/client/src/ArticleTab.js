@@ -1,28 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './ArticleCard.css'; // Assume you have a CSS file for styling
+import React from "react";
+import PropTypes from "prop-types";
+import "./ArticleCard.css"; // Assume you have a CSS file for styling
 
-const ArticleCard = ({article}) => { /* { article } */
+const ArticleCard = ({ article }) => {
+  /* { article } */
   return (
     <div className="article-card">
-      <img 
-        src={article.urlToImage} 
-        alt={article.title} 
-        className="article-image" 
+      <img
+        src={article.urlToImage}
+        alt={article.title}
+        className="article-image"
       />
       <div className="article-content">
         <h2 className="article-title">{article.title}</h2>
         <p className="article-author">By {article.author}</p>
         <p className="article-description">{article.description}</p>
-        <a 
-          href={article.url} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={article.url}
+          target="_blank"
+          rel="noopener noreferrer"
           className="article-link"
         >
           Read more
         </a>
-        <p className="article-published">Published on: {new Date(article.publishedAt).toLocaleString()}</p>
+        <p className="article-published">
+          Published on: {new Date(article.publishedAt).toLocaleString()}
+        </p>
       </div>
     </div>
   );

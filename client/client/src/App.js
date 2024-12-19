@@ -1,30 +1,32 @@
 import logo from "./logo.svg";
 import "./App.css";
-import ArticleTab from "./ArticleTab";
-import {useEffect, useState} from "react";
+import ArticleCard from "./ArticleTab";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [articles, setArticles] = useState([]);
 
+  const retrieveArticles = () => {
+    console.log("retrieveArticles called");
+    fetch("http://localhost:8080/get-articles")
+      .then((response) => response.json())
+      .then((data) => {
+        setArticles(data); // Replace the articles array instead of appending
+      });
+  };
 
-  const [articles, setArticles] = useState([]); 
-
-  const retrieveArticles = () => { 
-    fetch('http://localhost:8080/get-articles', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }, 
-    }).then(response => response.json())
-    .then(data => {
-      
-    })
-
-  }
-
+  useEffect(() => {
+    console.log("useEffect called");
+    retrieveArticles();
+  }, []);
 
   return (
     <div>
-      <ArticleTab  />
+      {/* <button onClick={retrieveArticles}>Visible Button</button> */}
+
+      {articles.map((article) => (
+        <ArticleCard key={article.id} article={article} />
+      ))}
     </div>
   );
 }

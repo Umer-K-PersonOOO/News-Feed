@@ -1,0 +1,52 @@
+.article-card {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 16px 0;
+  }
+  
+  .article-image {
+    width: 40%;
+    object-fit: cover;
+  }
+  
+  .article-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .article-title {
+    font-size: 1.5em;
+    margin: 0;
+  }
+  
+  .article-author {
+    font-size: 0.9em;
+    color: #555;
+    margin: 8px 0;
+  }
+  
+  .article-description {
+    font-size: 1em;
+    margin: 16px 0;
+  }
+  
+  .article-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 16px;
+  }
+  
+  .article-link:hover {
+    text-decoration: underline;
+  }
+  
+  .article-published {
+    font-size: 0.8em;
+    color: #999;
+    margin-top: auto;
+  }
